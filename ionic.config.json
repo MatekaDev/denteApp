@@ -1,0 +1,8 @@
+{
+  "name": "dente",
+  "app_id": "cc185e94",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
