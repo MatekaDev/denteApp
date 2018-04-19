@@ -1,13 +1,40 @@
 <ion-header>
 	<ion-navbar>
-		<button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-		<ion-title>Signup</ion-title>
+		<!--button ion-button menuToggle><ion-icon name="menu"></ion-icon></button-->
+		<ion-title>Registre-se</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content class="login-page">
+<ion-content padding>
+
+   <ion-item>
+      <button
+         class="add"
+         ion-button
+         item-right
+         icon-right
+         margin-bottom
+         color="primary"
+         (click)="addEntry()" >
+            Registrar-se
+            <ion-icon name="add"></ion-icon>
+      </button>
+   </ion-item>
+
+   <ion-item *ngFor="let item of items">
+      <h2>{{ item.usr_nome }} </h2>
+      <button
+         ion-button
+         color="primary"
+         item-right
+         (click)="viewEntry({ record: item })">View
+	  </button>
+   </ion-item>
+    
+  
+</ion-content>
+
+<!--ion-content class="login-page">
 
 	<div class="logo">
 		<img src="assets/img/appicon.svg" alt="Ionic Logo">
@@ -39,4 +66,4 @@
 		</div>
 	</form>
 
-</ion-content>
+</ion-content-->

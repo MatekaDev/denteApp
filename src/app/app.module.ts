@@ -20,6 +20,7 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
 import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
+import { AddUsuarioPage } from '../pages/add-usuario/add-usuario';
 import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
@@ -29,8 +30,28 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
+/*import { NgModule }         from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';*/
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
+/*
+@NgModule({
+  imports: [
+    BrowserModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
+  ],
+  declarations: [
+    AppComponent,
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {}
+
+*/	
+	
+	
   declarations: [
     ConferenceApp,
     AboutPage,
@@ -42,15 +63,17 @@ import { UserData } from '../providers/user-data';
     ScheduleFilterPage,
     SessionDetailPage,
     SignupPage,
+	AddUsuarioPage,
     SpeakerDetailPage,
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage	
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(ConferenceApp, {}, {
       links: [
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
@@ -65,7 +88,8 @@ import { UserData } from '../providers/user-data';
         { component: SupportPage, name: 'SupportPage', segment: 'support' },
         { component: LoginPage, name: 'LoginPage', segment: 'login' },
         { component: AccountPage, name: 'AccountPage', segment: 'account' },
-        { component: SignupPage, name: 'SignupPage', segment: 'signup' }
+        { component: SignupPage, name: 'SignupPage', segment: 'signup' },
+        { component: AddUsuarioPage, name: 'AddUsuarioPage', segment: 'addUsuario' }
       ]
     }),
     IonicStorageModule.forRoot()
@@ -75,13 +99,14 @@ import { UserData } from '../providers/user-data';
     ConferenceApp,
     AboutPage,
     AccountPage,
+    SignupPage,
+	AddUsuarioPage,
     LoginPage,
     MapPage,
     PopoverPage,
     SchedulePage,
     ScheduleFilterPage,
     SessionDetailPage,
-    SignupPage,
     SpeakerDetailPage,
     SpeakerListPage,
     TabsPage,
